@@ -118,6 +118,14 @@ body.dark-mode #recommendBtn {
   transition: transform 0.2s, background-color 0.5s;
 }
 
+.menu-image {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  margin-top: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
 /* Dark mode toggle switch */
 .switch {
   position: relative;

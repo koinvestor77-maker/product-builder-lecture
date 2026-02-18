@@ -20,6 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
     menuElement.className = 'menu-item';
     menuElement.textContent = menu;
     menuDisplay.appendChild(menuElement);
+
+    if (menu === '피자') {
+      const pizzaImage = document.createElement('img');
+      pizzaImage.src = './pizza.png'; // Assuming pizza.png is in the same directory
+      pizzaImage.alt = 'Pizza Image';
+      pizzaImage.className = 'menu-image'; // Add a class for styling
+      menuDisplay.appendChild(pizzaImage);
+    }
   };
 
   // Event listener for the recommend button
