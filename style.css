@@ -77,6 +77,26 @@ h1 {
   margin: 0;
 }
 
+nav {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode nav a {
+    color: var(--text-color-dark);
+}
+
 #recommendBtn {
   background-color: var(--button-bg-light);
   color: var(--button-text-light);
@@ -125,6 +145,82 @@ body.dark-mode #recommendBtn {
   border-radius: 8px;
   object-fit: cover;
 }
+
+/* Contact Form Specific Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--container-bg-light);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .contact-form {
+    background-color: var(--container-bg-dark);
+}
+
+.contact-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color-light);
+}
+
+body.dark-mode .contact-form label {
+    color: var(--text-color-dark);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+body.dark-mode .contact-form input[type="text"],
+body.dark-mode .contact-form input[type="email"],
+body.dark-mode .contact-form textarea {
+    background-color: #555;
+    color: var(--text-color-dark);
+    border-color: #666;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    background-color: var(--button-bg-light);
+    color: var(--button-text-light);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #3a7bd5;
+}
+
+body.dark-mode .contact-form button[type="submit"] {
+    background-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
+}
+
+body.dark-mode .contact-form button[type="submit"]:hover {
+    background-color: #6faee5;
+}
+
 
 /* Dark mode toggle switch */
 .switch {
