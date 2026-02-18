@@ -14,19 +14,29 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Function to display the recommended menu
-  const displayMenu = (menu) => {
-    menuDisplay.innerHTML = '';
-    const menuElement = document.createElement('div');
-    menuElement.className = 'menu-item';
-    menuElement.textContent = menu;
-    menuDisplay.appendChild(menuElement);
+  const displayMenu = async (menu) => {
+    menuDisplay.innerHTML = '<div class="loader"></div>'; // Show loader
 
-    if (menu === 'Pizza') {
-      const pizzaImage = document.createElement('img');
-      pizzaImage.src = './pizza.png'; // Assuming pizza.png is in the same directory
-      pizzaImage.alt = 'Pizza Image';
-      pizzaImage.className = 'menu-image'; // Add a class for styling
-      menuDisplay.appendChild(pizzaImage);
+    try {
+      const response = await fetch(`https://api.nanobanana.ai/generate-image?prompt=${menu}`);
+      const data = await response.json();
+      const imageUrl = data.imageUrl;
+
+      menuDisplay.innerHTML = ''; // Clear loader
+      const menuElement = document.createElement('div');
+      menuElement.className = 'menu-item';
+      menuElement.textContent = menu;
+      menuDisplay.appendChild(menuElement);
+
+      const imageElement = document.createElement('img');
+      imageElement.src = imageUrl;
+      imageElement.alt = `${menu} Image`;
+      imageElement.className = 'menu-image';
+      menuDisplay.appendChild(imageElement);
+
+    } catch (error) {
+      console.error('Error generating image:', error);
+      menuDisplay.innerHTML = 'Failed to generate image.';
     }
   };
 
