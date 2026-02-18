@@ -48,8 +48,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
+  padding: 40px 0;
   background-color: var(--background-color-light);
   color: var(--text-color-light);
   transition: background-color 0.3s, color 0.3s;
@@ -67,6 +68,8 @@ body.dark-mode {
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   transition: background-color 0.3s;
+  width: 100%;
+  max-width: 700px;
 }
 
 body.dark-mode .container {
@@ -228,6 +231,28 @@ body.dark-mode .contact-form button[type="submit"]:hover {
     background-color: #6faee5;
 }
 
+
+/* Comment section */
+.comment-section {
+  margin-top: 30px;
+  text-align: left;
+  width: 100%;
+}
+
+.comment-section h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#disqus_thread {
+  background-color: var(--background-color-light);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+body.dark-mode #disqus_thread {
+  background-color: #444;
+}
 
 /* Dark mode toggle switch */
 .switch {
