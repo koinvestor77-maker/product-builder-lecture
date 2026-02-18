@@ -149,11 +149,12 @@ body.dark-mode #recommendBtn {
 }
 
 .menu-image {
-  width: 100px; /* Adjust as needed */
-  height: 100px; /* Adjust as needed */
-  margin-top: 10px;
+  width: 250px;
+  height: 170px;
+  margin-top: 12px;
   border-radius: 8px;
   object-fit: cover;
+  display: block;
 }
 
 /* Contact Form Specific Styles */
