@@ -4,7 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const darkModeToggle = document.getElementById('darkModeToggle');
 
   const dinnerMenus = [
-    'Chicken', 'Pizza', 'Hamburger', 'Tteokbokki', 'Sushi', 'Pasta', 'Samgyeopsal', 'Budae-jjigae', 'Kimchi-jjigae', 'Doenjang-jjigae'
+    { name: 'Chicken', img: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=300&h=200&fit=crop' },
+    { name: 'Pizza', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&h=200&fit=crop' },
+    { name: 'Hamburger', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&h=200&fit=crop' },
+    { name: 'Tteokbokki', img: 'https://images.unsplash.com/photo-1635363638580-c2809d049eee?w=300&h=200&fit=crop' },
+    { name: 'Sushi', img: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=300&h=200&fit=crop' },
+    { name: 'Pasta', img: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=300&h=200&fit=crop' },
+    { name: 'Samgyeopsal', img: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=300&h=200&fit=crop' },
+    { name: 'Budae-jjigae', img: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=300&h=200&fit=crop' },
+    { name: 'Kimchi-jjigae', img: 'https://images.unsplash.com/photo-1583224964978-2257b960c3f3?w=300&h=200&fit=crop' },
+    { name: 'Doenjang-jjigae', img: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=300&h=200&fit=crop' },
   ];
 
   // Function to recommend a random menu
@@ -18,7 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
     menuDisplay.innerHTML = '';
     const menuElement = document.createElement('div');
     menuElement.className = 'menu-item';
-    menuElement.textContent = menu;
+    menuElement.textContent = menu.name;
+
+    const imgElement = document.createElement('img');
+    imgElement.src = menu.img;
+    imgElement.alt = menu.name;
+    imgElement.className = 'menu-image';
+    menuElement.appendChild(imgElement);
+
     menuDisplay.appendChild(menuElement);
   };
 
