@@ -4,7 +4,7 @@
   --container-bg-light: #fff;
   --button-bg-light: #4a90e2;
   --button-text-light: #fff;
-  --lotto-ball-bg: #4a90e2;
+  --menu-item-bg: #4a90e2;
 
   --background-color-dark: #2c2c2c;
   --text-color-dark: #f1f1f1;
@@ -54,7 +54,7 @@ h1 {
   margin: 0;
 }
 
-#generateBtn {
+#recommendBtn {
   background-color: var(--button-bg-light);
   color: var(--button-text-light);
   padding: 15px 30px;
@@ -67,16 +67,16 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-#generateBtn:hover {
+#recommendBtn:hover {
   transform: translateY(-2px);
 }
 
-body.dark-mode #generateBtn {
+body.dark-mode #recommendBtn {
     background-color: var(--button-bg-dark);
     color: var(--button-text-dark);
 }
 
-.lotto-numbers {
+.menu-display {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -84,19 +84,15 @@ body.dark-mode #generateBtn {
   min-height: 60px;
 }
 
-.lotto-ball {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
+.menu-item {
+  padding: 20px;
+  background-color: var(--menu-item-bg);
   color: white;
   font-size: 22px;
   font-weight: bold;
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   transition: transform 0.2s, background-color 0.5s;
-  background-color: var(--lotto-ball-bg);
 }
 
 /* Dark mode toggle switch */

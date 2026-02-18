@@ -1,42 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const generateBtn = document.getElementById('generateBtn');
-  const lottoNumbersContainer = document.getElementById('lotto-numbers');
+  const recommendBtn = document.getElementById('recommendBtn');
+  const menuDisplay = document.getElementById('menu-display');
   const darkModeToggle = document.getElementById('darkModeToggle');
 
-  // Function to generate unique random numbers
-  const generateLottoNumbers = () => {
-    const numbers = new Set();
-    while (numbers.size < 6) {
-      numbers.add(Math.floor(Math.random() * 45) + 1);
-    }
-    return Array.from(numbers).sort((a, b) => a - b);
+  const dinnerMenus = [
+    '치킨', '피자', '햄버거', '떡볶이', '초밥', '파스타', '삼겹살', '부대찌개', '김치찌개', '된장찌개'
+  ];
+
+  // Function to recommend a random menu
+  const recommendMenu = () => {
+    const randomIndex = Math.floor(Math.random() * dinnerMenus.length);
+    return dinnerMenus[randomIndex];
   };
 
-  // Function to get color based on number range
-  const getNumberColor = (number) => {
-    if (number <= 10) return '#fbc400'; // Yellow
-    if (number <= 20) return '#69c8f2'; // Blue
-    if (number <= 30) return '#ff7272'; // Red
-    if (number <= 40) return '#aaa'; // Gray
-    return '#b0d840'; // Green
+  // Function to display the recommended menu
+  const displayMenu = (menu) => {
+    menuDisplay.innerHTML = '';
+    const menuElement = document.createElement('div');
+    menuElement.className = 'menu-item';
+    menuElement.textContent = menu;
+    menuDisplay.appendChild(menuElement);
   };
 
-  // Function to display lotto numbers
-  const displayNumbers = (numbers) => {
-    lottoNumbersContainer.innerHTML = '';
-    numbers.forEach(number => {
-      const ball = document.createElement('div');
-      ball.className = 'lotto-ball';
-      ball.textContent = number;
-      ball.style.backgroundColor = getNumberColor(number);
-      lottoNumbersContainer.appendChild(ball);
-    });
-  };
-
-  // Event listener for the generate button
-  generateBtn.addEventListener('click', () => {
-    const numbers = generateLottoNumbers();
-    displayNumbers(numbers);
+  // Event listener for the recommend button
+  recommendBtn.addEventListener('click', () => {
+    const menu = recommendMenu();
+    displayMenu(menu);
   });
 
   // Event listener for the dark mode toggle
