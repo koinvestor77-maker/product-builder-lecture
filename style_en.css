@@ -1,3 +1,10 @@
+/* Dark mode toggle */
+.dark-mode-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
 /* Language switcher */
 .language-switcher {
   position: absolute;
