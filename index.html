@@ -3,29 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="오늘 저녁 뭐 먹을지 고민될 때! 버튼 하나로 랜덤 메뉴를 추천받아 보세요. 치킨, 피자, 초밥, 파스타 등 인기 메뉴를 사진과 함께 추천합니다." />
+  <meta name="keywords" content="저녁 메뉴 추천, 오늘 뭐 먹지, 랜덤 메뉴, 음식 추천, 저녁 식사" />
   <meta name="google-adsense-account" content="ca-pub-8434045293142311">
-  <title>저녁 메뉴 추천</title>
+  <title>오늘 뭐 먹지? - 저녁 메뉴 랜덤 추천 서비스</title>
   <link href='./style.css' rel='stylesheet'>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8434045293142311" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
     <div class="dark-mode-toggle">
-        <label class="switch">
-          <input type="checkbox" id="darkModeToggle">
-          <span class="slider round"></span>
-        </label>
-      </div>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <nav class="site-nav">
+      <a href="./index.html" class="active">홈</a>
+      <a href="./about.html">소개</a>
+      <a href="./privacy.html">개인정보처리방침</a>
+    </nav>
+
     <div class="language-switcher">
       <a href="./index.html" class="active">한국어</a>
       <a href="./index_en.html">English</a>
     </div>
-    <div class="header">
+
+    <header class="header">
       <h1>오늘 뭐 먹지?</h1>
-    </div>
-    <button id="recommendBtn">메뉴 추천</button>
-    <div id="menu-display" class="menu-display"></div>
-    <!-- Ad: 메뉴 추천 아래 -->
+      <p class="subtitle">매일 저녁 메뉴 고민, 이제 버튼 하나로 해결하세요!</p>
+    </header>
+
+    <section class="recommend-section">
+      <button id="recommendBtn">메뉴 추천</button>
+      <div id="menu-display" class="menu-display"></div>
+    </section>
+
+    <!-- Ad -->
     <div class="ad-container">
       <ins class="adsbygoogle"
         style="display:block"
@@ -35,8 +50,46 @@
         data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
+
+    <section class="tips-section">
+      <h2>저녁 메뉴 고르는 꿀팁</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h3>날씨에 맞게</h3>
+          <p>추운 날에는 김치찌개, 된장찌개 같은 따뜻한 국물 요리가 좋습니다. 더운 날에는 초밥이나 냉면처럼 시원한 메뉴를 선택해 보세요.</p>
+        </div>
+        <div class="tip-card">
+          <h3>함께 먹는 사람</h3>
+          <p>혼자 먹을 때는 간단한 햄버거나 떡볶이, 여러 명이 함께할 때는 삼겹살이나 피자처럼 나눠 먹기 좋은 메뉴를 추천합니다.</p>
+        </div>
+        <div class="tip-card">
+          <h3>건강 균형 맞추기</h3>
+          <p>어제 기름진 음식을 먹었다면 오늘은 가벼운 초밥이나 샐러드를 선택해 보세요. 일주일 단위로 균형을 맞추는 것이 좋습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section">
+      <h2>이용 방법</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <p><strong>"메뉴 추천"</strong> 버튼을 클릭하세요</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <p>랜덤으로 추천된 <strong>메뉴와 사진</strong>을 확인하세요</p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <p>마음에 들지 않으면 <strong>다시 클릭!</strong> 새로운 메뉴가 나옵니다</p>
+        </div>
+      </div>
+    </section>
+
     <form action="https://formspree.io/f/mgolzegl" method="POST" class="contact-form">
       <h2>제휴 문의</h2>
+      <p class="form-desc">음식점, 배달 서비스 등 제휴를 원하시면 아래 양식으로 문의해 주세요.</p>
       <label for="name">이름:</label>
       <input type="text" id="name" name="name" required>
 
@@ -48,11 +101,23 @@
 
       <button type="submit">문의하기</button>
     </form>
+
     <div class="comment-section">
       <h2>댓글</h2>
+      <p class="section-desc">오늘 뭐 드셨나요? 여러분의 저녁 메뉴를 공유해 주세요!</p>
       <div id="disqus_thread"></div>
     </div>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 오늘 뭐 먹지? All rights reserved.</p>
+      <div class="footer-links">
+        <a href="./index.html">홈</a>
+        <a href="./about.html">소개</a>
+        <a href="./privacy.html">개인정보처리방침</a>
+      </div>
+    </footer>
   </div>
+
   <script>
     var disqus_config = function () {
       this.page.url = window.location.href;
@@ -68,5 +133,4 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <script defer type="text/javascript" src="./main.js"></script>
 </body>
-
 </html>

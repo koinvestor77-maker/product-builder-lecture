@@ -3,29 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Can't decide what to eat for dinner? Get a random menu recommendation with one click! We suggest popular dishes like chicken, pizza, sushi, pasta and more with photos." />
+  <meta name="keywords" content="dinner menu recommendation, what to eat, random menu, food suggestion" />
   <meta name="google-adsense-account" content="ca-pub-8434045293142311">
-  <title>Dinner Menu Recommendation</title>
-  <link href='./style_en.css' rel='stylesheet'>
+  <title>What to Eat Today? - Random Dinner Menu Recommendation</title>
+  <link href='./style.css' rel='stylesheet'>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8434045293142311" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
     <div class="dark-mode-toggle">
-        <label class="switch">
-          <input type="checkbox" id="darkModeToggle">
-          <span class="slider round"></span>
-        </label>
-      </div>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <nav class="site-nav">
+      <a href="./index_en.html" class="active">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./privacy.html">Privacy</a>
+    </nav>
+
     <div class="language-switcher">
       <a href="./index.html">한국어</a>
       <a href="./index_en.html" class="active">English</a>
     </div>
-    <div class="header">
-      <h1>What to eat today?</h1>
-    </div>
-    <button id="recommendBtn">Recommend Menu</button>
-    <div id="menu-display" class="menu-display"></div>
-    <!-- Ad: Below menu recommendation -->
+
+    <header class="header">
+      <h1>What to Eat Today?</h1>
+      <p class="subtitle">Solve your daily dinner dilemma with one click!</p>
+    </header>
+
+    <section class="recommend-section">
+      <button id="recommendBtn">Recommend Menu</button>
+      <div id="menu-display" class="menu-display"></div>
+    </section>
+
+    <!-- Ad -->
     <div class="ad-container">
       <ins class="adsbygoogle"
         style="display:block"
@@ -35,8 +50,46 @@
         data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
+
+    <section class="tips-section">
+      <h2>Tips for Choosing Dinner</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h3>Match the Weather</h3>
+          <p>On cold days, warm soups like Kimchi-jjigae or Doenjang-jjigae are perfect. On hot days, try something refreshing like sushi or cold noodles.</p>
+        </div>
+        <div class="tip-card">
+          <h3>Consider Your Company</h3>
+          <p>Eating alone? Go for a quick hamburger or tteokbokki. Dining with friends? Samgyeopsal or pizza are great for sharing.</p>
+        </div>
+        <div class="tip-card">
+          <h3>Keep It Balanced</h3>
+          <p>Had greasy food yesterday? Opt for lighter options like sushi or salad today. Try to balance your meals over the week.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section">
+      <h2>How to Use</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <p>Click the <strong>"Recommend Menu"</strong> button</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <p>Check out the <strong>recommended dish with photo</strong></p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <p>Not satisfied? <strong>Click again</strong> for a new suggestion!</p>
+        </div>
+      </div>
+    </section>
+
     <form action="https://formspree.io/f/mgolzegl" method="POST" class="contact-form">
       <h2>Partnership Inquiry</h2>
+      <p class="form-desc">Interested in partnering with us? Fill out the form below.</p>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
@@ -48,17 +101,36 @@
 
       <button type="submit">Submit</button>
     </form>
+
+    <div class="comment-section">
+      <h2>Comments</h2>
+      <p class="section-desc">What did you eat today? Share your dinner choice!</p>
+      <div id="disqus_thread"></div>
+    </div>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 What to Eat Today? All rights reserved.</p>
+      <div class="footer-links">
+        <a href="./index_en.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./privacy.html">Privacy</a>
+      </div>
+    </footer>
   </div>
-  <div id="disqus_thread"></div>
-<script>
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://productbuilder-wuwueebe6z.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = window.location.href;
+      this.page.identifier = window.location.pathname;
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://productbuilder-wuwueebe6z.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
     })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <script defer type="text/javascript" src="./main_en.js"></script>
 </body>
 </html>
