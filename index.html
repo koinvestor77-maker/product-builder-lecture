@@ -23,9 +23,19 @@
     </div>
     <button id="recommendBtn">메뉴 추천</button>
     <div id="menu-display" class="menu-display"></div>
-    <nav>
-      <a href="./contact.html">제휴 문의</a>
-    </nav>
+    <form action="https://formspree.io/f/mgolzegl" method="POST" class="contact-form">
+      <h2>제휴 문의</h2>
+      <label for="name">이름:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">이메일:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">메시지:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">문의하기</button>
+    </form>
   </div>
   <script defer type="text/javascript" src="./main.js"></script>
 </body>
